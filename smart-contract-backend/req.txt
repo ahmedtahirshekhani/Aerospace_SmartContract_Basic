@@ -1,0 +1,53 @@
+1)	Record each time a part is installed or removed from an airplane
+2)	Capture how long the part being replaced was in service
+3)	The identity, location and credentials of the technician performing the repair
+
+Interface PartDetails{
+	id: "0102xxxxx", string
+	name: ....,
+	from: company,
+	to: airline,
+	aircraftID: “123xxxxx”,
+	installTechID: “123xxxxx”,
+}
+
+Interface TechnicianDetails{
+    id: "123xxxxx",
+    name: "",
+    certifiedFrom: "",
+    certificateID: "",
+    location: "",
+    currentCompany: "",
+    joiningDate: "",
+    listOfPreviousJobDetails: []
+}
+
+
+-----
+mapping (partId => num) partInService;
+-----
+
+Note: partInService wil following values represents
+-99 (Removed)
+1xx21 (Time elapsed in seconds)
+
+
+setPart(part : PartDetails)
+getPart(partID : string)
+registerTechnician(tech : Technician)
+getTechnician(techId: string)
+getService(partId: string) returns time
+putPartInService(partId: string)
+
+
+-------------------------------
+
+
+location, dateFixed, nameOfTech
+
+- only set and get of this
+
+ganache truffle
+
+
+
